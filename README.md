@@ -2,20 +2,32 @@
 
 [![Build Status](https://secure.travis-ci.org/johnotander/css-properties.png?branch=master)](https://travis-ci.org/johnotander/css-properties)
 
-List of all CSS properties.
+Get list of all available (possible) css properties from scraped directly from W3C website - returns array, have API and CLI
 
 ## Installation
 
 ```bash
 npm install --save css-properties
+css-properties --help
 ```
 
 ## Usage
 
-```javascript
+```js
 var cssProperties = require('css-properties');
 
+cssProperties([refUrl[,callback]]);
 cssProperties();  // => ['background', 'background-attachment', ...]
+cssProperties.json();  // => {properties: ['background', 'background-attachment', ...]}
+
+
+cssProperties(function(err, res) {
+  // assert.equal(err, null || undefined);
+  // assert(res.length >= 178);
+  
+  console.log(res)
+  // => ['background', 'background-attachment', ...]
+});
 ```
 
 ## License

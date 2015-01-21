@@ -1,14 +1,13 @@
 {
   "name": "css-properties",
-  "description": "List of all CSS properties.",
+  "description": "Get list of all available (possible) css properties from scraped directly from W3C website - returns array, have API and CLI",
   "author": "John Otander",
   "version": "0.0.1",
-  "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
   "scripts": {
-    "test": "mocha test"
+    "lint": "jshint index.js && jscs index.js --reporter inline",
+    "test": "mocha",
+    "test-cov": "istanbul cover _mocha",
+    "test-travis": "istanbul cover _mocha --report lcovonly"
   },
   "repository": {
     "type": "git",
@@ -16,15 +15,31 @@
   },
   "keywords": [
     "css",
-    "properties"
+    "properties",
+    "w3c",
+    "scraped",
+    "possible",
+    "available",
+    "api",
+    "cli",
+    "property"
   ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/johnotander/css-properties/issues"
   },
   "homepage": "https://github.com/johnotander/css-properties",
-  "dependencies": {},
+  "dependencies": {
+    "cheerio": "^0.18.0",
+    "each-async": "^1.1.1",
+    "got": "^2.3.1"
+  },
   "devDependencies": {
-    "mocha": "*"
+    "istanbul-harmony": "^0.3.1",
+    "mocha": "*",
+    "mocha-lcov-reporter": "^0.0.1"
+  },
+  "bin": {
+    "css-properties": "./cli.js"
   }
 }
