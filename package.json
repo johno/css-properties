@@ -2,7 +2,7 @@
   "name": "css-properties",
   "description": "Get list of all available (possible) css properties from scraped directly from W3C website - returns array, have API and CLI",
   "author": "John Otander",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "scripts": {
     "lint": "jshint index.js && jscs index.js --reporter inline",
     "test": "mocha",
