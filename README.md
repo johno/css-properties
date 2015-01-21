@@ -8,6 +8,7 @@ Get list of all available (possible) css properties from scraped directly from W
 
 ```bash
 npm install --save css-properties
+css-properties --help
 ```
 
 ## Usage
