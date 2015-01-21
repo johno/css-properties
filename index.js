@@ -1,80 +1,17 @@
 'use strict';
 
-module.exports = function cssProperties(options) {
-  return [
-    'background',
-    'background-attachment',
-    'background-color',
-    'background-image',
-    'background-position',
-    'background-repeat',
-    'border',
-    'border-bottom',
-    'border-bottom-color',
-    'border-bottom-style',
-    'border-bottom-width',
-    'border-color',
-    'border-left',
-    'border-left-color',
-    'border-left-style',
-    'border-left-width',
-    'border-right',
-    'border-right-color',
-    'border-right-style',
-    'border-right-width',
-    'border-style',
-    'border-top',
-    'border-top-color',
-    'border-top-style',
-    'border-top-width',
-    'border-width',
-    'clear',
-    'clip',
-    'color',
-    'cursor',
-    'display',
-    'filter',
-    'font',
-    'font-family',
-    'font-size',
-    'font-variant',
-    'font-weight',
-    'height',
-    'left',
-    'letter-spacing',
-    'line-height',
-    'list-style',
-    'list-style-image',
-    'list-style-position',
-    'list-style-type',
-    'margin',
-    'margin-bottom',
-    'margin-left',
-    'margin-right',
-    'margin-top',
-    'overflow',
-    'padding',
-    'padding-bottom',
-    'padding-left',
-    'padding-right',
-    'padding-top',
-    'page-break-after',
-    'page-break-before',
-    'position',
-    'float',
-    'text-align',
-    'text-decoration',
-    'text-decoration: blink',
-    'text-decoration: line-through',
-    'text-decoration: none',
-    'text-decoration: overline',
-    'text-decoration: underline',
-    'text-indent',
-    'text-transform',
-    'top',
-    'vertical-align',
-    'visibility',
-    'width',
-    'z-index'
-  ];
-}
+var buildProperties = require('./build');
+var cssPropertiesJson = require('./w3c-css-properties');
+
+module.exports = function cssProperties(refUrl, callback) {
+  if (!callback && !refUrl) {
+    return cssPropertiesJson.properties
+  }
+  return buildProperties(refUrl, callback)
+};
+
+module.exports.json = function json() {
+  return cssPropertiesJson;
+};
+
+module.exports.api = buildProperties;
