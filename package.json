@@ -5,6 +5,7 @@
   "version": "1.0.0",
   "scripts": {
     "lint": "jshint index.js && jscs index.js --reporter inline",
+    "build": "node build",
     "test": "mocha",
     "test-cov": "istanbul cover _mocha",
     "test-travis": "istanbul cover _mocha --report lcovonly"
@@ -29,12 +30,11 @@
     "url": "https://github.com/johnotander/css-properties/issues"
   },
   "homepage": "https://github.com/johnotander/css-properties",
-  "dependencies": {
-    "cheerio": "^0.18.0",
-    "each-async": "^1.1.1",
-    "got": "^2.3.1"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "cheerio": "^0.19.0",
+    "each-async": "^1.1.1",
+    "got": "^4.1.1",
     "istanbul-harmony": "^0.3.1",
     "mocha": "*",
     "mocha-lcov-reporter": "^0.0.1"

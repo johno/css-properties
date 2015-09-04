@@ -1,40 +1,37 @@
-'use strict';
+'use strict'
 
-var cheerio = require('cheerio');
-var got = require('got');
-var eachAsync = require('each-async');
+var fs = require('fs')
+var cheerio = require('cheerio')
+var got = require('got')
+var eachAsync = require('each-async')
 
-var CSSREF = 'http://www.w3schools.com/cssref/';
+var CSSREF = 'http://www.w3schools.com/cssref/'
 
-/**
- * Get list of all available (possible) css properties
- * from scraped directly from W3C website
- *
- * @link http://www.w3schools.com/cssref/
- * @api public
- */
-module.exports = function build(refUrl, callback) {
-  var props = [];
+function build (refUrl, callback) {
+  var props = []
   if (!callback) {
-    callback = refUrl;
-    refUrl = CSSREF;
+    callback = refUrl
+    refUrl = CSSREF
   }
 
-  got.get(refUrl, function(err, body) {
+  got.get(refUrl, function (err, body) {
     if (err) {
       callback(err)
-      return;
+      return
     }
-    var $ = cheerio.load(body);
-    var refs = $('div.notranslate').find('a[target="_top"]');
-    var len = refs.length
-    var refItems = refs.toArray();
 
-    eachAsync(refItems, function(item, index, done) {
-      props.push(item.children[0].data);
-      done();
-    }, function() {
-      callback(null, props);
-    });
-  });
-};
+    var $ = cheerio.load(body)
+    var refs = $('div.notranslate').find('a[target="_top"]')
+    var len = refs.length
+    var refItems = refs.toArray()
+
+    eachAsync(refItems, function (item, index, done) {
+      props.push(item.children[0].data)
+      done()
+    }, function () {
+      fs.writeFile('w3c-css-properties.json', JSON.stringify(props))
+    })
+  })
+}
+
+build()
