@@ -39,8 +39,5 @@
     "istanbul-harmony": "^0.3.1",
     "mocha": "*",
     "mocha-lcov-reporter": "^0.0.1"
-  },
-  "bin": {
-    "css-properties": "./cli.js"
   }
 }
