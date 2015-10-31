@@ -2,7 +2,7 @@
   "name": "css-properties",
   "description": "Get list of all available CSS properties",
   "author": "John Otander",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "files": [
     "index.js",
     "w3c-css-properties.json"
