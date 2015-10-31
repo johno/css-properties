@@ -1,15 +1,14 @@
-'use strict'
+import test from 'ava'
+import cssProperties from './'
 
-var assert = require('assert')
-var cssProperties = require('./index')
+test('returns an array of CSS properties', t => {
+  t.plan(1)
 
-describe('css-properties', function () {
+  t.true(cssProperties.length >= 177)
+})
 
-  it('returns an array of CSS properties', function () {
-    assert(cssProperties.length >= 177)
-  })
+test('returns an object', t => {
+  t.plan(1)
 
-  it('returns an object', function () {
-    assert.strictEqual(typeof cssProperties, 'object')
-  })
+  t.same(typeof cssProperties, 'object')
 })

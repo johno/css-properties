@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "build": "node build",
-    "test": "mocha"
+    "test": "ava"
   },
   "repository": "johnotander/css-properties",
   "keywords": [
@@ -21,10 +21,10 @@
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
+    "ava": "*",
     "cheerio": "^0.19.0",
     "each-async": "^1.1.1",
     "got": "^4.1.1",
-    "mocha": "*",
     "single-trailing-newline": "^1.0.0"
   }
 }
