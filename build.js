@@ -4,6 +4,7 @@ var fs = require('fs')
 var cheerio = require('cheerio')
 var got = require('got')
 var eachAsync = require('each-async')
+var trailingLine = require('single-trailing-newline')
 
 var CSSREF = 'http://www.w3schools.com/cssref/'
 
@@ -29,7 +30,7 @@ function build (refUrl, callback) {
       props.push(item.children[0].data)
       done()
     }, function () {
-      fs.writeFile('w3c-css-properties.json', JSON.stringify(props))
+      fs.writeFile('w3c-css-properties.json', trailingLine(JSON.stringify(props)))
     })
   })
 }
