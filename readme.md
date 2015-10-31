@@ -1,6 +1,6 @@
-# css-properties [![Build Status](https://secure.travis-ci.org/johnotander/css-properties.png?branch=master)](https://travis-ci.org/johnotander/css-properties)
+# css-properties [![Build Status](https://secure.travis-ci.org/johnotander/css-properties.png?branch=master)](https://travis-ci.org/johnotander/css-properties) [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
 
-Get list of all available (possible) CSS properties scraped directly from W3C website - returns an array.
+Get list of all CSS properties. Regularly updated directly from the W3C website.
 
 ## Installation
 
@@ -31,4 +31,6 @@ MIT
 
 Crafted with <3 by John Otander ([@4lpine](https://twitter.com/4lpine)).
 
-This package was initially generated with [yeoman](http://yeoman.io) and the [p generator](https://github.com/johnotander/generator-p.git).
+***
+
+> This package was initially generated with [yeoman](http://yeoman.io) and the [p generator](https://github.com/johnotander/generator-p.git).
